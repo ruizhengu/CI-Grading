@@ -1,0 +1,8 @@
+digraph CausalDAG {
+    rankdir=LR;
+    "create_object" -> "edit_object";
+    "create_object" -> "delete_object";
+    "create_object" -> "grade";
+    "edit_object" -> "grade";
+    "delete_object" -> "grade";
+}

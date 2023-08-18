@@ -1,0 +1,41 @@
+digraph Cafe {
+"App.main" [label="R" pos="0,5!"];
+"Cafe.addRecipe" [label="A" pos="-2,4!"];
+"Cafe.removeRecipe" [label="B" pos="-1,4!"];
+"Cafe.placeOrder" [label="C" pos="0,4!"];
+"Cafe.printMenu" [label="D" pos="1,4!"];
+"Cafe.findRecipe" [label="E" pos="-1,3!"];
+"Cafe.printPendingOrders" [label="F" pos="0,3!"];
+"Recipe.getPrice" [label="G" pos="1,3!"];
+"Order.toString" [label="H" pos="1,2!"];
+"Recipe.getName" [label="I" pos="2,4!"];
+
+// "App.main" -> "Cafe.addRecipe";
+// "App.main" -> "Cafe.removeRecipe";
+// "App.main" -> "Recipe.getName";
+// "App.main" -> "Cafe.printMenu";
+// "Cafe.printPendingOrders" -> "Order.toString";
+// "Order.toString" -> "Recipe.getName";
+// "Cafe.printMenu" -> "Recipe.getName";
+// "Cafe.printMenu" -> "Recipe.getPrice";
+// "Cafe.placeOrder" -> "Cafe.findRecipe";
+// "Cafe.placeOrder" -> "Recipe.getPrice";
+
+"Cafe.placeOrder" -> "Cafe.findRecipe"[style="dotted"];
+"Cafe.addRecipe" -> "Cafe.findRecipe"[style="dotted"];
+"Cafe.addRecipe" -> "Cafe.printPendingOrders"[style="dotted"];
+"Cafe.placeOrder" -> "Recipe.getPrice"[style="dotted"];
+"Cafe.placeOrder" -> "Cafe.printPendingOrders"[style="dotted"];
+
+// Y [label=Y];
+// "App.main" -> Y;
+// "Recipe.getName" -> Y;
+// "Recipe.getPrice" -> Y;
+// "Cafe.addRecipe" -> Y;
+// "Cafe.removeRecipe" -> Y;
+// "Cafe.printPendingOrders" -> Y;
+// "Order.toString" -> Y;
+// "Cafe.printMenu" -> Y;
+// "Cafe.placeOrder" -> Y;
+// "Cafe.findRecipe" -> Y;
+}
